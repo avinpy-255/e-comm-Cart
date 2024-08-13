@@ -18,7 +18,6 @@ export default function ProductDetailPage({params: {id}}){
         </div>
     
         <div className="grid md:grid-cols-3 gap-6">
-            {/* Product Image */}
             <div className="md:col-span-1">
                 <Image
                     src={product.image}
@@ -29,16 +28,12 @@ export default function ProductDetailPage({params: {id}}){
                     className="rounded-lg shadow-lg object-cover w-full"
                 />
             </div>
-    
-            {/* Product Details */}
             <div className="md:col-span-2 flex flex-col justify-between">
                 <div>
                     <h1 className="text-4xl font-bold text-gray-800 mb-4">{product.name}</h1>
                     <ProductRate rate={product.rating} count={product.reviews} className="mb-4"/>
                     <p className="text-lg text-gray-600 mb-6">{product.description}</p>
-    
-                    {/* Price and Add to Cart Section */}
-                    <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
+                  <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
                         <div className="mb-4 flex justify-between items-center text-lg font-semibold text-gray-700">
                             <span>Price</span>
                             <span className="text-3xl text-gray-900">₹{product.price}</span>
