@@ -18,6 +18,7 @@ export default function ProductDetailPage({params: {id}}){
         </div>
     
         <div className="grid md:grid-cols-3 gap-6">
+            {/* Product Image */}
             <div className="md:col-span-1">
                 <Image
                     src={product.image}
@@ -29,19 +30,23 @@ export default function ProductDetailPage({params: {id}}){
                 />
             </div>
     
-            <div className="md:col-span-1 flex flex-col justify-between">
+            {/* Product Details */}
+            <div className="md:col-span-2 flex flex-col justify-between">
                 <div>
                     <h1 className="text-4xl font-bold text-gray-800 mb-4">{product.name}</h1>
                     <ProductRate rate={product.rating} count={product.reviews} className="mb-4"/>
-                    <p className="text-lg text-gray-600">{product.description}</p>
+                    <p className="text-lg text-gray-600 mb-6">{product.description}</p>
+    
+                    {/* Price and Add to Cart Section */}
+                    <div className="bg-gray-100 p-6 rounded-lg shadow-lg">
+                        <div className="mb-4 flex justify-between items-center text-lg font-semibold text-gray-700">
+                            <span>Price</span>
+                            <span className="text-3xl text-gray-900">₹{product.price}</span>
+                        </div>
+                          <p className='text-red-800 font-semibold text-xl mb-2 mt-2' >only {product.countInStock} items left</p>
+                        <AddToCart product={product} redirect={true} />
+                    </div>
                 </div>
-            </div>
-            <div className="md:col-span-1 bg-gray-100 p-6 rounded-lg shadow-lg">
-                <div className="mb-4 flex justify-between items-center text-lg font-semibold text-gray-700">
-                    <span>Price</span>
-                    <span className="text-2xl text-gray-900">₹{product.price}</span>
-                </div>
-                <AddToCart product={product} redirect={true} className="w-full"/>
             </div>
         </div>
     </div>
