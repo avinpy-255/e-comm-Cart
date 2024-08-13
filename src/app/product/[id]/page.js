@@ -10,48 +10,40 @@ export default function ProductDetailPage({params: {id}}){
         return <div>Product not found2</div>
     }
     return(
-        <div>
-            <div className="py-2">
-                <Link href='/'> Back to products</Link>
-            </div>
-            <div className="grid md:grid-cols-4 md:gap-3">
-              <div className="md:col-span-2">
+        <div className="container mx-auto px-4 py-6">
+        <div className="mb-4">
+            <Link href='/' className="text-blue-500 hover:text-blue-700 font-semibold">
+                ← Back to products
+            </Link>
+        </div>
+    
+        <div className="grid md:grid-cols-3 gap-6">
+            <div className="md:col-span-1">
                 <Image
-                  src={product.image}
-                  alt={product.name}
-                  width={640}
-                  height={640}
-                  sizes="100vw"
-                  style={{
-                    width:'100%',
-                    height: 'auto',
-                  }}
+                    src={product.image}
+                    alt={product.name}
+                    width={640}
+                    height={640}
+                    sizes="100vw"
+                    className="rounded-lg shadow-lg object-cover w-full"
                 />
-              </div>
-              <div>
-                <ul>
-                    <li>
-                        <h1 className="text-3xl">{product.name}</h1>
-                    </li>
-                    <li>
-                        <ProductRate rate={product.rating} count={product.reviews}/>
-                    </li>
-                    <li>
-                        <p className='text-lg'>{product.description}</p>
-                    </li>
-                </ul>
-              </div>
-              <div>
-                <div className="card p-5">
-                <div className="mb-2 flex justify-between">
-                    <div>Price</div>
-                    <div>{product.price}</div>
+            </div>
+    
+            <div className="md:col-span-1 flex flex-col justify-between">
+                <div>
+                    <h1 className="text-4xl font-bold text-gray-800 mb-4">{product.name}</h1>
+                    <ProductRate rate={product.rating} count={product.reviews} className="mb-4"/>
+                    <p className="text-lg text-gray-600">{product.description}</p>
                 </div>
-                
-                  <AddToCart product={product} redirect={true}/>
+            </div>
+            <div className="md:col-span-1 bg-gray-100 p-6 rounded-lg shadow-lg">
+                <div className="mb-4 flex justify-between items-center text-lg font-semibold text-gray-700">
+                    <span>Price</span>
+                    <span className="text-2xl text-gray-900">₹{product.price}</span>
                 </div>
-              </div>
+                <AddToCart product={product} redirect={true} className="w-full"/>
             </div>
         </div>
+    </div>
     )
 }
