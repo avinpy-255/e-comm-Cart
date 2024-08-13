@@ -16,7 +16,7 @@ const ProductItem = ({product}) => {
                 className='rounded-sm shadow object-cover h-50 w-full'
             />
         </Link>
-        <div className='flex flex-col items-center justify-center p-5 bg-yellow-500' >
+        <div className='flex flex-col items-center justify-center p-5' >
             <h2 className='text-2xl font-bold font-sans antialiased  text-gray-800'>
                 <Link href={`/product/${product.id}`}>
                     {product.name}
