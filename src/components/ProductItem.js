@@ -7,7 +7,7 @@ import AddToCart from './AddToCart'
 const ProductItem = ({product}) => {
   return (
     <div className='mb-2 block  border border-yellow-400 shadow-md'>
-        <Link href={`/products/${product.id}`}>
+        <Link href={`/product/${product.id}`}>
             <Image
                 src={product.image}
                 width={400}
@@ -18,7 +18,7 @@ const ProductItem = ({product}) => {
         </Link>
         <div className='flex flex-col items-center justify-center p-5 bg-yellow-500' >
             <h2 className='text-2xl font-bold font-sans antialiased  text-gray-800'>
-                <Link href={`/products/${product.id}`}>
+                <Link href={`/product/${product.id}`}>
                     {product.name}
                 </Link>
             </h2>
@@ -27,7 +27,6 @@ const ProductItem = ({product}) => {
                 ₹{product.price.toFixed(2)}
             </p>
             <AddToCart showQty={false} product={product} increasePerClick={true} redirect={false}/>
-            <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full'>Add to Cart</button>
         </div>
     </div>
   )

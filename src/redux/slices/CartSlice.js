@@ -2,9 +2,12 @@ import { createSlice } from "@reduxjs/toolkit";
 import Cookies from "js-cookie";
 
 
-const initialState = {
+const initialState = Cookies.get('cart')
+? {...JSON.parse(Cookies.get('cart')), loading: true, showSidebar: false}:
+{
     loading: true,
-    cartItems: [],
+    showSidebar: false,
+    cartItems: []
 }
 
 const addDecimals = (num) => {

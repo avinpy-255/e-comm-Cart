@@ -1,4 +1,4 @@
-import { addToCart } from "@/redux/slices/CartSlice"
+import { addToCart,  removeFromCart } from "@/redux/slices/CartSlice"
 import Image from "next/image"
 import Link from "next/link"
 import { useSelector, useDispatch } from "react-redux"
@@ -13,7 +13,7 @@ export default function Sidebar(){
     }
 
     const removeFromCartHandler = (id) => {
-        dispatch(removeFromCart(id))
+        dispatch( removeFromCart(id))
     }
     return (
         
