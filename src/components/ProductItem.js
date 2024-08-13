@@ -26,6 +26,7 @@ const ProductItem = ({product}) => {
             <p className='text-slate-800 text-2xl font-medium'>
                 ₹{product.price.toFixed(2)}
             </p>
+            <p className='text-red-800 font-semibold text-xl mb-2 mt-2' >only {product.countInStock} items left</p>
             <AddToCart showQty={false} product={product} increasePerClick={true} redirect={false}/>
         </div>
     </div>

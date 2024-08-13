@@ -34,13 +34,13 @@ export default function Sidebar(){
                             href='/cart'
                             className="w-full text-center p-1 rounded-2xl border-2"
                             >
-                                Go To Cart
+                                GoTo Cart
                             </Link>
                          </div>
                          {cartItems.map((item) => (
                             <div key={item.id} className="py-2 px-2 border-b border-b-gray-700">
                                <Link href={`/product/${item.id}`}>
-                                    <p className="flex items-center">
+                                    <p className="flex items-baseline ">
                                         <Image className="p-1" width={50} height={50} src={item.image} alt={item.name}></Image>
                                         <div className="ml-4">
                                             <div>{item.name}</div>
