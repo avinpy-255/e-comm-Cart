@@ -49,7 +49,7 @@ export default function CartPage() {
               </thead>
               <tbody>
                 {cartItems.map((item) => (
-                  <tr key={item.id} className="border-b">
+                  <tr key={item.id} className="border-b ">
                     <td className="flex items-center py-4">
                       <Link
                         href={`/product/${item.id}`}

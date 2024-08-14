@@ -98,11 +98,7 @@ export default function PlaceOrderScreen() {
                                 Edit
                         </Link>
 
-                        <div className="text-right mt-4">
-                            <Link href="/cart" className="bg-blue-500 text-white py-2 px-4 rounded hover:bg-blue-600 transition">
-                                Place Order
-                            </Link>
-                        </div>
+                        
                     </div>
 
                     <div className="bg-white p-4 shadow rounded-lg">
